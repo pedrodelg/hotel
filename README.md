@@ -1,10 +1,10 @@
 # 🏨 REST API Hotel
 
-REST API where customer can check room availability, place a reservation, cancel it or modify it.
+REST API for a Hotel where customer can check room availability, place a reservation, cancel it or modify it.
 
 
 ## 🚀 Getting started
-1. This application is connected to a MySQL Data base so we need to create following schema and table
+1. This application is connected to a MySQL DB, so we need to create the following schema and table running below script:
 ```sql
 CREATE SCHEMA `hotel` ;
 
@@ -45,14 +45,14 @@ GET /api/find-reservation/{id}
 ```text
 PUT /api/update-reservation
 ```
-* Description: Uses to update the reservation
+* Description: Used to update the reservation
 
 ```text
 GET /api/checkRoomAvailability
 ```
 * Description: Used to check available dates for reservation
 
-#### For more information you can check the swagger documentation in following link
+#### For more information you can check the swagger documentation in following link:
 
 ```text
 http://localhost:8080/swagger-ui/index.html
@@ -72,3 +72,4 @@ http://localhost:8080/swagger-ui/index.html
 * Lombok
 * MySQL
 
+Developed by [Pedro Delgadillo](https://github.com/pedrodelg)💻
