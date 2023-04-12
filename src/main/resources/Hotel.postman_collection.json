@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "ef424291-3321-40ba-acb4-0ccdddd82d95",
+		"name": "Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book-room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 48,\n    \"name\": \"Carlos\",\n    \"arrivalDate\": \"2023-04-15\",\n    \"departureDate\": \"2023-04-17\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/book-room",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book-room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-reservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/find-reservation/45638",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"find-reservation",
+						"45638"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel-reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cancel-reservation/48",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cancel-reservation",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-reservation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4538,\n    \"name\": \"Jean\",\n    \"arrivalDate\": \"2023-04-27\",\n    \"departureDate\": \"2023-04-28\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/update-reservation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"update-reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-room-availability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4568,\n    \"name\": \"Jose\",\n    \"arrivalDate\": \"2023-04-10\",\n    \"departureDate\": \"2023-04-25\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/checkRoomAvailability?arrivalDate=2023-04-30&departureDate=2023-05-16",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checkRoomAvailability"
+					],
+					"query": [
+						{
+							"key": "arrivalDate",
+							"value": "2023-04-30"
+						},
+						{
+							"key": "departureDate",
+							"value": "2023-05-16"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

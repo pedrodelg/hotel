@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+
 @RestController
 @RequestMapping("/api")
 public class HotelRestController {
@@ -43,8 +45,17 @@ public class HotelRestController {
     @PutMapping("/update-reservation")
     public ResponseEntity<BookingResponse> updateReservation(@RequestBody Guest guest) {
 
-        BookingResponse bookingResponse = new BookingResponse("The reservation for has been updated successfully", hotelService.updateReservation(guest));
+        BookingResponse bookingResponse = new BookingResponse("The reservation has been updated successfully", hotelService.updateReservation(guest));
 
+        return new ResponseEntity<BookingResponse>(bookingResponse, null, HttpStatus.OK);
+
+    }
+
+    @GetMapping("/checkRoomAvailability")
+    public ResponseEntity<BookingResponse> checkRoomAvailability(@RequestParam LocalDate arrivalDate, @RequestParam LocalDate departureDate){
+
+        hotelService.roomAvailability(arrivalDate, departureDate);
+        BookingResponse bookingResponse = new BookingResponse("The dates selected are available", null);
         return new ResponseEntity<BookingResponse>(bookingResponse, null, HttpStatus.OK);
 
     }

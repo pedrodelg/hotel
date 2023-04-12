@@ -5,6 +5,8 @@ import com.alten.ca.hotel.error.BookedDaysException;
 import com.alten.ca.hotel.model.entity.Guest;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 @Service
 public class HotelServiceImpl implements HotelService{
 
@@ -19,7 +21,7 @@ public class HotelServiceImpl implements HotelService{
     @Override
     public void bookRoom(Guest guest) {
 
-        validations.bookingValidations(guest);
+        validations.bookingValidations(guest.getArrivalDate(), guest.getDepartureDate());
         hotelBookingDAO.bookRoom(guest);
 
     }
@@ -40,7 +42,13 @@ public class HotelServiceImpl implements HotelService{
 
     public Guest updateReservation(Guest guest) {
 
-        validations.bookingValidations(guest);
-        return hotelBookingDAO.updateReservation(findReservationById(guest.getId()));
+        validations.bookingValidations(guest.getArrivalDate(), guest.getDepartureDate());
+        findReservationById(guest.getId());
+
+        return hotelBookingDAO.updateReservation(guest);
+    }
+
+    public void roomAvailability(LocalDate arrivalDate, LocalDate departureDate){
+        validations.bookingValidations(arrivalDate, departureDate);
     }
 }

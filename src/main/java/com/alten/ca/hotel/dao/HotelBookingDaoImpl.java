@@ -60,9 +60,9 @@ public class HotelBookingDaoImpl implements HotelBookingDAO {
 
     @Override
     @Transactional
-    public Guest updateReservation(Guest guest) {
+    public Guest updateReservation(Guest guestUpdate) {
 
-        return entityManager.merge(guest);
+        return entityManager.merge(guestUpdate);
     }
 
 

@@ -27,26 +27,42 @@ CREATE TABLE hotel.HotelBooking (
 
 ## 🛠 Rest API methods
 
-```bash
-Post /api/book-room
+```text
+POST /api/book-room
 ```
-* Description: Use to book the room if it's available. 
+* Description: Used to book the room if it's available. 
 
-```bash
-Delete /api/cancel-reservation/{id}
+```text
+DELETE /api/cancel-reservation/{id}
 ```
-* Description: Use to cancel the reservation
+* Description: Used to cancel the reservation
 
-```bash
-Get /api/find-reservation/{id}
+```text
+GET /api/find-reservation/{id}
 ```
-* Description: Use to check the reservation
+* Description: Used to see reservation information
 
-```bash
-Put /api/update-reservation
+```text
+PUT /api/update-reservation
 ```
-* Description: Use to update the reservation
+* Description: Uses to update the reservation
 
+```text
+GET /api/checkRoomAvailability
+```
+* Description: Used to check available dates for reservation
+
+#### For more information you can check the swagger documentation in following link
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+#### You can find the postman collection inside the project in the following path: 
+
+```text
+/hotel/src/main/resources/Hotel.postman_collection.json
+```
 
 ## 💻 Technologies:
 * Java 17

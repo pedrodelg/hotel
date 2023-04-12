@@ -32,11 +32,4 @@ public final class Utils {
             throw new BookedDaysException("Departure Date can't be before Arrival Date.");
         }
     }
-
-    public static void reservationNextDay(LocalDate arrivalDate){
-
-        if (arrivalDate.isBefore(LocalDate.now().plusDays(1))){
-                throw new BookedDaysException("Reservation should be from tomorrow.");
-        }
-    }
 }
